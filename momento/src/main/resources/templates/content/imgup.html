@@ -10,29 +10,27 @@
 
 <th:block layout:fragment="content">
 	
-<script type="text/javascript">
-
-   function readURL(input) {
-      var file = input.files[0] //파일에 대한 정보
-      console.log(file) //파일의 정보를 토대로 파일을 읽기
-      if (file != '') {
-         var reader = new FileReader();
-         reader.readAsDataURL(file);
-         reader.onload = function (e) { //파일 로드한 값을 표현, e는 이벤트안에 result값이 파일의 정보 가지고 있음 
-	     console.log(e.target)
-		console.log(e.target.result)
-           $('#preview').attr('src', e.target.result);
-          }
-      }
-  }  
-</script>
-
 	<div class="container">
 		<h2>두피 검사 결과</h2>
 	      <form method="post" action="imgupdate.com" enctype="multipart/form-data">
 				<div class="form-group" style="height: 150px; width: 200px;">
-					<label>이미지 파일 첨부</label> 
-					
+					<label>이미지 파일 첨부
+						<script type="text/javascript">
+						   function readURL(input) {
+						      var file = input.files[0] //파일에 대한 정보
+						      console.log(file) //파일의 정보를 토대로 파일을 읽기
+						      if (file != '') {
+						         var reader = new FileReader();
+						         reader.readAsDataURL(file);
+						         reader.onload = function (e) { //파일 로드한 값을 표현, e는 이벤트안에 result값이 파일의 정보 가지고 있음 
+							     console.log(e.target)
+								console.log(e.target.result)
+						           $('#preview').attr('src', e.target.result);
+						          }
+						      }
+						  }  
+						</script>
+					</label> 
 		            <input type="file" name="imgFile" onchange="readURL(this);"/>
 					<img id="preview" border:"rad" src="#" width=200 height=150 alt="선택된 이미지가 없습니다" style="align-content: flex-end; ">
 				</div>
@@ -41,8 +39,5 @@
 				</div>
 			</form>
 	</div>
-
-	
 </th:block>
-
 </html>

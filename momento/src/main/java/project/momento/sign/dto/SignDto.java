@@ -15,19 +15,22 @@ import lombok.Data;
 @PropertySource(value = "classpath:application.properties", encoding = "UTF-8")
 public class SignDto {
 	
+	
+	private String PK_USER_SEQ;
 	/*아이디*/
-	private String id;
+	private String USER_ID;
 	/*비밀번호*/
-	private String pwd;
+	private String USER_PASSWORD;
 	/*비밀번호 확인*/
-	private String pwdRe;
+	private String USER_NM;
 	/*성별*/
-	private String userName;
+	private String USER_SEX;
 	/*생년월일*/
-	private String birthday;
+	private String USER_BIRTH;
 	/*주소*/
-	private String address;
+	private String USER_ADDR;
 	/*상세 주소*/
-	private String addressMain;
+	private String USER_ADDR_DETAIL;
 
+	private String REGIST_DT;
 }

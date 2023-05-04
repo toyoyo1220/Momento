@@ -43,7 +43,7 @@ public class SingController {
 			, @RequestParam("id") String id //html id 가져오기
 			){// DTO=VO 같은말
 		
-		signDto.setId(id);
+		signDto.setUSER_ID(id);
 		
 		int cnt = SignService.checkButton(signDto); // 중복확인한 값을 int로 받음
 		System.out.println(cnt);
