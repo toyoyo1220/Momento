@@ -4,6 +4,10 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{common/layout/defaultLayout}">
 
+<head>
+	<link href="css/imgup.css" rel="stylesheet">
+</head>
+
 <th:block layout:fragment="content">
 	
 <script type="text/javascript">
@@ -25,11 +29,12 @@
 
 	<div class="container">
 		<h2>두피 검사 결과</h2>
-			<form method="post" action="imgupdate.com" enctype="multipart/form-data">
+	      <form method="post" action="imgupdate.com" enctype="multipart/form-data">
 				<div class="form-group" style="height: 150px; width: 200px;">
 					<label>이미지 파일 첨부</label> 
+					
 		            <input type="file" name="imgFile" onchange="readURL(this);"/>
-					<img id="preview" src="#" width=200 height=150 alt="선택된 이미지가 없습니다" style="align-content: flex-end; ">
+					<img id="preview" border:"rad" src="#" width=200 height=150 alt="선택된 이미지가 없습니다" style="align-content: flex-end; ">
 				</div>
 				<div id=".button">
 					<input id="last_button" type="submit" value=" 등록 " onclick="사진등록">

@@ -4,70 +4,138 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorate="~{common/layout/defaultLayout}">
 
-<style>
-	.marksChar{
-		margin: 50%;
-	}
-		
-</style>
-
+<head>
+	<link href="css/chart.css" rel="stylesheet">             
+	<script src="https://kit.fontawesome.com/d1f64dfea6.js" crossorigin="anonymous"></script>
+</head>
 <th:block layout:fragment="content">
 
 
+
 	<div class="container">
-		<h2>두피 검사 결과</h2>
-		<canvas id="marksChart" width="100" height="100"></canvas>
-		<h2>추천 상품</h2>
-		<div class="row" style="justify-content: center;">
-			<div class="card" style="width: 18rem; margin-right: 10px; margin-left: 10px;">
-				<img class="card-img-top"
-					src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_187d4fc8cee%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_187d4fc8cee%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-					alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">3</p>
-					<a href="mypage.com" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-			<div class="card" style="width: 18rem; margin-right: 10px; margin-left: 10px;">
-				<img class="card-img-top"
-					src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_187d4fc8cee%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_187d4fc8cee%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-					alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">3</p>
-					<a href="mypage.com" class="btn btn-primary">Go somewhere</a>
-				</div>
-			</div>
-			<div class="card" style="width: 18rem; margin-right: 10px; margin-left: 10px;">
-				<img class="card-img-top"
-					src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_187d4fc8cee%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_187d4fc8cee%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-					alt="Card image cap">
-				<div class="card-body">
-					<h5 class="card-title">Card title</h5>
-					<p class="card-text">3</p>
-					<a href="mypage.com" class="btn btn-primary">Go somewhere</a>
-				</div>
+		<h2 style=" padding: 50px; text-align: center;">두피 검사 결과</h2>
+
+		<canvas id="marksChart" width="1100vw" height="400"></canvas>
+		<h2 style=" padding: 50px; text-align: center;">당신의 두피는 타입은 "" 입니다 <br>
+			당신의 탈모입니다. 자라나라 머리머리! </h2>
+
+		<input class="btn1" type="submit" name="submit" value="샴푸">
+		<input class="btn1" type="submit" name="submit" value="린스">
+		<input class="btn1" type="submit" name="submit" value="에센스">
+
+		<form class="search-box" action="" method="get">
+			<input class="search-txt" type="text" name="" placeholder="검색해주세요">
+			<button class="search-btn" type="submit">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</button>
+		</form>
+
+
+	</div>
+
+	<div class="row" style="justify-content: center;">
+		<div class="card" style="width: 18rem; margin-right: 35px; margin-left: 20px; margin-top: 50px ">
+			<img class="card-img-top"
+				src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_187d4fc8cee%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_187d4fc8cee%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+				alt="Card image cap">
+			<div class="card-body" style="text-align:center">
+				<h5 class="card-title">삼푸 이름</h5>
+				<p class="card-text">탈모</p>
+				<p class="card-text">건선</p>
+
+
+				<fieldset class="rate">
+					<input type="radio" id="rating10" name="rating" value="10"><label for="rating10" title="5점"></label>
+					<input type="radio" id="rating9" name="rating" value="9"><label class="half" for="rating9"
+						title="4.5점"></label>
+					<input type="radio" id="rating8" name="rating" value="8"><label for="rating8" title="4점"></label>
+					<input type="radio" id="rating7" name="rating" value="7"><label class="half" for="rating7"
+						title="3.5점"></label>
+					<input type="radio" id="rating6" name="rating" value="6"><label for="rating6" title="3점"></label>
+					<input type="radio" id="rating5" name="rating" value="5"><label class="half" for="rating5"
+						title="2.5점"></label>
+					<input type="radio" id="rating4" name="rating" value="4"><label for="rating4" title="2점"></label>
+					<input type="radio" id="rating3" name="rating" value="3"><label class="half" for="rating3"
+						title="1.5점"></label>
+					<input type="radio" id="rating2" name="rating" value="2"><label for="rating2" title="1점"></label>
+					<input type="radio" id="rating1" name="rating" value="1"><label class="half" for="rating1"
+						title="0.5점"></label>
+				</fieldset>
 			</div>
 		</div>
-		
-		<nav aria-label="Page navigation example">
-			<ul class="pagination justify-content-end">
-				<li class="page-item disabled">
-					<a class="page-link" href="#" tabindex="-1">Previous</a>
-				</li>
-		
-				<li class="page-item"><a class="page-link" href="#">1</a></li>
-				<li class="page-item"><a class="page-link" href="#">2</a></li>
-				<li class="page-item"><a class="page-link" href="#">3</a></li>
-				<li class="page-item">
-					<a class="page-link" href="#">Next</a>
-				</li>
-			</ul>
-		</nav>
-		
+		<div class="card" style="width: 18rem; margin-right: 30px; margin-left: 35px; margin-top: 50px ">
+			<img class="card-img-top"
+				src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_187d4fc8cee%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_187d4fc8cee%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+				alt="Card image cap">
+			<div class="card-body" style="text-align:center">
+				<h5 class="card-title">샴푸 이름</h5>
+				<p class="card-text">탈모</p>
+				<p class="card-text">탈모</p>
+				<p class="card-text">탈모</p>
+				<fieldset class="rate">
+					<input type="radio" id="rating10" name="rating" value="10"><label for="rating10" title="5점"></label>
+					<input type="radio" id="rating9" name="rating" value="9"><label class="half" for="rating9"
+						title="4.5점"></label>
+					<input type="radio" id="rating8" name="rating" value="8"><label for="rating8" title="4점"></label>
+					<input type="radio" id="rating7" name="rating" value="7"><label class="half" for="rating7"
+						title="3.5점"></label>
+					<input type="radio" id="rating6" name="rating" value="6"><label for="rating6" title="3점"></label>
+					<input type="radio" id="rating5" name="rating" value="5"><label class="half" for="rating5"
+						title="2.5점"></label>
+					<input type="radio" id="rating4" name="rating" value="4"><label for="rating4" title="2점"></label>
+					<input type="radio" id="rating3" name="rating" value="3"><label class="half" for="rating3"
+						title="1.5점"></label>
+					<input type="radio" id="rating2" name="rating" value="2"><label for="rating2" title="1점"></label>
+					<input type="radio" id="rating1" name="rating" value="1"><label class="half" for="rating1"
+						title="0.5점"></label>
+				</fieldset>
+			</div>
+		</div>
+		<div class="card" style="width: 18rem; margin-right: 30px; margin-left: 30px; margin-top: 50px">
+			<img class="card-img-top"
+				src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_187d4fc8cee%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_187d4fc8cee%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+				alt="Card image cap">
+			<div class="card-body" style="text-align:center">
+				<h5 class="card-title">샴푸 이름</h5>
+				<p class="card-text">탈모</p>
+				<p class="card-text">탈모</p>
+				<p class="card-text">탈모</p>
+				<fieldset class="rate">
+					<input type="radio" id="rating10" name="rating" value="10"><label for="rating10" title="5점"></label>
+					<input type="radio" id="rating9" name="rating" value="9"><label class="half" for="rating9"
+						title="4.5점"></label>
+					<input type="radio" id="rating8" name="rating" value="8"><label for="rating8" title="4점"></label>
+					<input type="radio" id="rating7" name="rating" value="7"><label class="half" for="rating7"
+						title="3.5점"></label>
+					<input type="radio" id="rating6" name="rating" value="6"><label for="rating6" title="3점"></label>
+					<input type="radio" id="rating5" name="rating" value="5"><label class="half" for="rating5"
+						title="2.5점"></label>
+					<input type="radio" id="rating4" name="rating" value="4"><label for="rating4" title="2점"></label>
+					<input type="radio" id="rating3" name="rating" value="3"><label class="half" for="rating3"
+						title="1.5점"></label>
+					<input type="radio" id="rating2" name="rating" value="2"><label for="rating2" title="1점"></label>
+					<input type="radio" id="rating1" name="rating" value="1"><label class="half" for="rating1"
+						title="0.5점"></label>
+				</fieldset>
+			</div>
+		</div>
 	</div>
-	
+
+	<nav aria-label="Page navigation example" style="padding: 50px;">
+		<ul class="pagination justify-content-center">
+			<li class="page-item disabled">
+				<a class="page-link" href="#" tabindex="-1">Previous</a>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item">
+				<a class="page-link" href="#">Next</a>
+			</li>
+		</ul>
+	</nav>
+
+	</div>
 
 	<script>
 		var marksCanvas = document.getElementById("marksChart");
@@ -91,6 +159,7 @@
 		};
 
 		var chartOptions = {
+			responsive: false,
 			scale: {
 				gridLines: {
 					color: "black",
@@ -111,7 +180,7 @@
 				}
 			},
 			legend: {
-				position: 'left'
+				position: 'center'
 			}
 		};
 
@@ -121,9 +190,6 @@
 			options: chartOptions
 		});
 	</script>
-	<table>
-		
-	</table>
 </th:block>
 
 </html>
