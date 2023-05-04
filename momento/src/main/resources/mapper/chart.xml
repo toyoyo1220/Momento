@@ -17,8 +17,6 @@
 			REGIS_DT
 		]]>
 	</select>
-	<!--UPDATE문 -->
-	
-	<!-- DELETE문 -->
+
 	
 </mapper>
