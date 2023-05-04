@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- Default Layout Import-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layout/defaultLayout}">
+
+<th:block layout:fragment="content">
+
+	<style>
+		.content {
+
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+		}
+	</style>
+
+
+
+	<div class="content">
+		<div class="bodyContainer">
+			<div id="wrap">
+				<br><br>
+				<b>
+					<center>
+						<font size="6" color="gray">회원가입</font>
+					</center>
+				</b>
+				<br><br><br>
+				<div class="row g-3">
+					<div class="col-sm-12">
+						<label for="firstName" class="form-label">아이디</label>
+						<div class="input-group">
+						<input type="text" class="form-control" placeholder="Promo code">
+						<button type="submit" class="btn btn-secondary">중복확인</button>
+					</div>
+					</div>
+					<div class="col-sm-12">
+						<label for="lastName" class="form-label">비밀번호</label>
+						<input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+					</div>
+					<div class="col-sm-12">
+						<label for="lastName" class="form-label">비밀번호 확인</label>
+						<input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+					</div>
+					<div class="col-sm-12">
+						<label for="lastName" class="form-label">성별</label>
+						<input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+					</div>
+					<div class="col-sm-12">
+						<label for="lastName" class="form-label">생년월일</label>
+						<input type="date" class="form-control" id="lastName" placeholder="" value="" required="">
+					</div>
+					<div class="col-sm-12">
+						<label for="lastName" class="form-label">주소</label>
+						<input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+					</div>
+					<div class="col-sm-12">
+						<label for="lastName" class="form-label">상세주소</label>
+						<input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
+					</div>
+				</div>
+				<!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
+				<!-- 값(파라미터) 전송은 POST 방식, 전송할 페이지는 JoinPro.jsp -->
+				<form method="post" action="/signUp.com" name="userInfo" onsubmit="return checkValue()">
+					<!--       action 누르면 사이드이동                          -->
+					<table>
+						<tbody>
+							<tr>
+								<td id="title">아이디</td>
+								<td>
+
+									<input id="id" type="text" size="30" name="id" maxlength="20" placeholder="아이디">
+									<input type="button" id="check_Button" value="중복확인">
+									<!--id 중복체크-->
+									<span id="check"></span>
+								</td>
+							</tr>
+
+							<tr>
+								<td id="title">비밀번호</td>
+								<td>
+									<input type="password" size="30" name="pwd" maxlength="15" placeholder="비밀번호">
+								</td>
+
+							</tr>
+
+							<tr>
+								<td id="title">비밀번호 확인</td>
+								<td>
+									<input type="password" size="30" name="pwdRe" maxlength="15" placeholder="비밀번호 확인">
+								</td>
+							</tr>
+
+							<tr>
+								<td id="title">성별</td>
+								<td>
+									<input type="text" size="30" name="userName" maxlength="40" placeholder="성별">
+								</td>
+							</tr>
+							<tr>
+								<td id="title">생년월일</td>
+								<td>
+									<input type="date" size="30" name="birthday" min="1900-04-21" max="2070-04-21"
+										placeholder="생년월일">
+								</td>
+							</tr>
+
+							<tr>
+								<td id="title">주소</td>
+								<td>
+									<input type="text" size="30" name="address" placeholder="주소">
+								</td>
+							</tr>
+							<tr>
+								<td id="title">상세주소</td>
+								<td>
+									<input type="text" size="30" name="addressMain" placeholder="상세주소">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+					<d id=".button">
+						<center>
+							<input id="last_button" type="submit" value=" 등록 " onclick="페이지이동">
+						</center>
+			</div>
+			</form>
+		</div>
+	</div>
+	</div>
+
+</html>
+
+<script type="text/javascript">
+
+	// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+	function checkValue() {
+		if (document.userInfo.id.value == "") {
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+
+		if (!document.userInfo.pwd.value) {
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+
+		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+		if (document.userInfo.pwd.value != document.userInfo.pwdRe.value) {
+			alert("비밀번호를 동일하게 입력하세요.");
+			return false;
+		}
+
+		if (!document.userInfo.userName.value) {
+			alert("이름을 입력하세요.");
+			return false;
+		}
+
+		//		if (!document.userInfo.Email.value) {
+		//			alert("이메일을 입력하세요.");
+		//			return false;
+		//		}
+
+		if (!document.userInfo.birthday.value) {
+			alert("나이를 입력해주세요.");
+			return false;
+		}
+
+		if (!document.userInfo.address.value) {
+			alert("주소를 입력하세요.");
+			return false;
+		}
+
+		if (!document.userInfo.addressMain.value) {
+			alert("주소를 입력하세요.");
+			return false;
+		}
+		document.userInfo.submit();
+	}
+
+	// 취소 버튼 클릭시 로그인 화면으로 이동
+	function goLoginForm() {
+		location.href = "LoginForm.jsp";
+	}
+
+
+	// 아이디 중복체크
+	$("#check_Button").click(function () {
+		$("#signup").attr("type", "button");
+		var id = $("#id").val();
+		//아이디가 적혀있는지 확인하기
+		$.ajax({
+			type: "POST",
+			url: "/signck.com",
+			async: false,
+			data: {id: id},
+			success: function (data) {
+				if (document.userInfo.id.value == "") {//중복체크 null값 일때 표기
+					alert("아이디를 입력하세요.");
+					return false;
+				}
+				if (data >= 1) {
+					alert("사용중인 아이디");
+					$("#check_Button").addClass("olmessagef");
+					$("#check_Button").removeClass("olmessaget");
+					$("#signup").attr("type", "button");
+				} else {
+					$("#check_Button").addClass("olmessaget");
+					$("#check_Button").removeClass("olmessagef");
+					alert("사용 가능한 아이디");
+					$("#signup").attr("type", "submit");
+				}//alert(data);//창띄우기
+			}
+		});
+
+		return false;// 폼 제출 막기
+	});
+
+
+
+</script>
+</th:block>

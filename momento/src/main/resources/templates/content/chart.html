@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Default Layout Import-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layout/defaultLayout}">
+
+<style>
+	.marksChar{
+		margin: 50%;
+	}
+		
+</style>
+
+<th:block layout:fragment="content">
+
+
+	<div class="container">
+		<h2>두피 검사 결과</h2>
+		<canvas id="marksChart" width="100" height="100"></canvas>
+		<h2>추천 상품</h2>
+		<div class="row" style="justify-content: center;">
+			<div class="card" style="width: 18rem; margin-right: 10px; margin-left: 10px;">
+				<img class="card-img-top"
+					src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_187d4fc8cee%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_187d4fc8cee%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">3</p>
+					<a href="mypage.com" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem; margin-right: 10px; margin-left: 10px;">
+				<img class="card-img-top"
+					src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_187d4fc8cee%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_187d4fc8cee%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">3</p>
+					<a href="mypage.com" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+			<div class="card" style="width: 18rem; margin-right: 10px; margin-left: 10px;">
+				<img class="card-img-top"
+					src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_187d4fc8cee%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_187d4fc8cee%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
+					alt="Card image cap">
+				<div class="card-body">
+					<h5 class="card-title">Card title</h5>
+					<p class="card-text">3</p>
+					<a href="mypage.com" class="btn btn-primary">Go somewhere</a>
+				</div>
+			</div>
+		</div>
+		
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-end">
+				<li class="page-item disabled">
+					<a class="page-link" href="#" tabindex="-1">Previous</a>
+				</li>
+		
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+					<a class="page-link" href="#">Next</a>
+				</li>
+			</ul>
+		</nav>
+		
+	</div>
+	
+
+	<script>
+		var marksCanvas = document.getElementById("marksChart");
+
+
+		var marksData = {
+			labels: ["지성", "중성", "탈모", "건성"],
+			datasets: [{
+				label: "전사",
+				backgroundColor: "transparent",
+				borderColor: "rgba(200,0,0,0.6)",
+				fill: false,
+				radius: 6,
+				pointRadius: 6,
+				pointBorderWidth: 6,
+				pointBackgroundColor: "green",
+				pointBorderColor: "rgba(200,0,0,0.6)",
+				pointHoverRadius: 10,
+				data: [3]
+			}]
+		};
+
+		var chartOptions = {
+			scale: {
+				gridLines: {
+					color: "black",
+					lineWidth: 3
+				},
+				angleLines: {
+					display: false
+				},
+				ticks: {
+					beginAtZero: true,
+					min: 0,
+					max: 5,
+					stepSize: 1
+				},
+				pointLabels: {
+					fontSize: 18,
+					fontColor: "green"
+				}
+			},
+			legend: {
+				position: 'left'
+			}
+		};
+
+		var radarChart = new Chart(marksCanvas, {
+			type: 'radar',
+			data: marksData,
+			options: chartOptions
+		});
+	</script>
+	<table>
+		
+	</table>
+</th:block>
+
+</html>

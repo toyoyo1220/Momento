@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="project.momento.chart.mapper.ChartMapper">	<!-- xml파일을 사용할 mapper가 있는 경로 -->
+
+	<select id="marksChart" parameterType="project.momento.chart.dto.ChartDto" resultType="project.momento.chart.dto.ChartDto">
+		<![CDATA[
+		SELECT
+			PK_RESULT_SEQ,
+			PK_USER_SEQ,
+			PK_PROD_SEQ,
+			DANARUFF,
+			SEBUM,
+			PUSTULE,
+			ERYTHEMA,
+			HAIR_LOSS,
+			REGIS_DT
+		]]>
+	</select>
+	<!-- UPDATE문 -->
+	
+	<!-- DELETE문 -->
+	
+</mapper>

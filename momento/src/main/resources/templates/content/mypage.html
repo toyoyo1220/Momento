@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!-- Default Layout Import-->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{common/layout/defaultLayout}">
+
+<th:block layout:fragment="content">	
+	<div class="container">
+		<h2>두피 검사 결과</h2>
+		<canvas id="marksChart" width="100" height="100"></canvas>
+		
+		<?></?>
+	</div>
+	
+	
+	<script>
+		var marksCanvas = document.getElementById("marksChart");
+
+
+		var marksData = {
+			labels: ["지성", "중성", "탈모", "건성"],
+			datasets: [{
+				label: "전사",
+				backgroundColor: "transparent",
+				borderColor: "rgba(200,0,0,0.6)",
+				fill: false,
+				radius: 6,
+				pointRadius: 6,
+				pointBorderWidth: 6,
+				pointBackgroundColor: "green",
+				pointBorderColor: "rgba(200,0,0,0.6)",
+				pointHoverRadius: 10,
+				data: [3]
+			}]
+		};
+
+		var chartOptions = {
+			scale: {
+				gridLines: {
+					color: "black",
+					lineWidth: 3
+				},
+				angleLines: {
+					display: false
+				},
+				ticks: {
+					beginAtZero: true,
+					min: 0,
+					max: 5,
+					stepSize: 1
+				},
+				pointLabels: {
+					fontSize: 18,
+					fontColor: "green"
+				}
+			},
+			legend: {
+				position: 'left'
+			}
+		};
+
+		var radarChart = new Chart(marksCanvas, {
+			type: 'radar',
+			data: marksData,
+			options: chartOptions
+		});
+	</script>
+
+</th:block>
+
+</html>
